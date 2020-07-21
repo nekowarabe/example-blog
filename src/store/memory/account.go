@@ -1,6 +1,10 @@
 package memory
 
-import "app/src/core/entities"
+import (
+	"errors"
+
+	"app/src/core/entities"
+)
 
 // Account 記憶體實作的 repositories.Account
 type Account map[string]entities.Account
@@ -10,8 +14,23 @@ func NewAccountRepository() Account {
 	return make(map[string]entities.Account)
 }
 
-// Add 新增帳號
-func (repo Account) Add(account entities.Account) error {
+// Get 取得指定 username 的帳號
+func (repo Account) Get(username string) (entities.Account, error) {
+	account, exist := repo[username]
+	if !exist {
+		return entities.Account{}, errors.New("can't find this account")
+	}
+
+	return account, nil
+}
+
+// GetByToken 取得指定 token 的帳號
+func (repo Account) GetByToken(token string) (entities.Account, error) {
+	return repo.Get(token)
+}
+
+// Put 將帳號放入
+func (repo Account) Put(account entities.Account) error {
 	repo[account.Username] = account
 	return nil
 }

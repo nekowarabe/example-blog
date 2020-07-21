@@ -21,6 +21,7 @@ func (gender Gender) IsValid() bool {
 type Account struct {
 	Username string
 	Password string
+	Token    string
 	Tel      string
 	Age      uint8
 	Gender   Gender

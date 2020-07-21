@@ -34,7 +34,7 @@ func Register(input RegisterInput) error {
 		Gender:   input.Gender,
 	}
 
-	if err = repositories.Account.Add(account); err != nil {
+	if err = repositories.Account.Put(account); err != nil {
 		return err
 	}
 
