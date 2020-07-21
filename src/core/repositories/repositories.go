@@ -15,6 +15,6 @@ type AccountRepository interface {
 	Add(account entities.Account) error
 	// Exist 是否有指定 username 的帳號在集合中
 	Exist(username string) (bool, error)
-	// 將集合的所有資料清除
+	// Clear 將集合的所有資料清除
 	Clear()
 }
