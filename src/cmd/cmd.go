@@ -4,6 +4,8 @@ import (
 	"log"
 	"os"
 
+	"app/src/config"
+
 	"github.com/spf13/cobra"
 )
 
@@ -12,6 +14,10 @@ var rootCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, _ []string) { cmd.Help() },
 
 	Short: "A simple web server.",
+}
+
+func init() {
+	cobra.OnInitialize(config.Init)
 }
 
 // Execute 執行應用程式
