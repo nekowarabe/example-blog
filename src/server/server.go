@@ -1,7 +1,7 @@
 package server
 
 import (
-	"app/src/config"
+	"app/src/configs"
 
 	"github.com/labstack/echo/v4"
 )
@@ -11,5 +11,5 @@ func Run() error {
 	server := echo.New()
 	server.HideBanner = true
 
-	return server.Start(":" + config.HTTP().Port)
+	return server.Start(":" + configs.HTTP().Port)
 }

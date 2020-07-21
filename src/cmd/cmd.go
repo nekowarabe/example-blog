@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"app/src/config"
+	"app/src/configs"
 
 	"github.com/spf13/cobra"
 )
@@ -17,7 +17,7 @@ var rootCmd = &cobra.Command{
 }
 
 func init() {
-	cobra.OnInitialize(config.Init)
+	cobra.OnInitialize(configs.Init)
 }
 
 // Execute 執行應用程式

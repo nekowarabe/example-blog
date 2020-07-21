@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"app/src/config"
+	"app/src/configs"
 
 	"github.com/spf13/cobra"
 )
@@ -9,7 +9,7 @@ import (
 var configCmd = &cobra.Command{
 	Use:   "config",
 	Short: "Display config information",
-	Run:   func(_ *cobra.Command, _ []string) { config.Display() },
+	Run:   func(_ *cobra.Command, _ []string) { configs.Display() },
 }
 
 func init() {
