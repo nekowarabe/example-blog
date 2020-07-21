@@ -1,2 +1,5 @@
 # 建構檔
 app
+
+# VSCode 外掛 REST Client 的檔案
+http.rest
