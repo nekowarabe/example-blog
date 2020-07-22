@@ -12,6 +12,7 @@ import (
 // Run 執行 Server
 func Run() error {
 	repositories.Account = memory.NewAccountRepository()
+	repositories.Post = memory.NewPostRepository()
 
 	server := echo.New()
 	server.HideBanner = true
@@ -25,6 +26,8 @@ func Run() error {
 	server.POST("/accounts", handlers.Register)
 	server.GET("/accounts/:username", handlers.GetAccountInfo)
 	server.DELETE("/accounts/:username", handlers.DeleteAccount)
+
+	server.POST("/posts", handlers.AddPost)
 
 	return server.Start(":" + configs.HTTP().Port)
 }
