@@ -17,8 +17,13 @@ func Run() error {
 	server.HideBanner = true
 	server.Debug = true
 
+	server.Use(
+		extractToken,
+	)
+
 	server.POST("/login", handlers.Login)
 	server.POST("/accounts", handlers.Register)
+	server.GET("/accounts/:username", handlers.GetAccountInfo)
 
 	return server.Start(":" + configs.HTTP().Port)
 }
