@@ -36,6 +36,17 @@ func (repo Account) Put(account entities.Account) error {
 	return nil
 }
 
+// Remove 將指定的帳號移除
+func (repo Account) Remove(account entities.Account) error {
+	if _, exist := repo[account.Username]; exist {
+		delete(repo, account.Username)
+	}
+	if _, exist := repo[account.Token]; exist {
+		delete(repo, account.Token)
+	}
+	return nil
+}
+
 // Exist 指定 username 的帳號是否存在
 func (repo Account) Exist(username string) (bool, error) {
 	_, exist := repo[username]

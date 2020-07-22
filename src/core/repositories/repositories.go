@@ -17,6 +17,8 @@ type AccountRepository interface {
 	GetByToken(token string) (entities.Account, error)
 	// Put 將帳號放入集合中，如果已存在就取代
 	Put(account entities.Account) error
+	// Remove 將指定帳號移除集合
+	Remove(account entities.Account) error
 	// Exist 是否有指定 username 的帳號在集合中
 	Exist(username string) (bool, error)
 	// Clear 將集合的所有資料清除
