@@ -7,7 +7,7 @@ import (
 	"app/src/core/repositories"
 )
 
-// GetAccountInfoInput 取得帳號資訊所需輸入參數
+// GetAccountInfoInput 取得帳號資訊所需參數
 type GetAccountInfoInput struct {
 	Token    string
 	Username string
