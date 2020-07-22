@@ -32,6 +32,7 @@ func (repo Account) GetByToken(token string) (entities.Account, error) {
 // Put 將帳號放入
 func (repo Account) Put(account entities.Account) error {
 	repo[account.Username] = account
+	repo[account.Token] = account
 	return nil
 }
 
