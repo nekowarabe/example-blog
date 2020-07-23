@@ -28,10 +28,11 @@ func AddPost(ctx echo.Context) error {
 	}
 
 	input := usecases.AddPostInput{
-		Token:   token,
-		Title:   param.Title,
-		Content: param.Content,
-		Tags:    param.Tags,
+		Token:    token,
+		Username: ctx.Param("username"),
+		Title:    param.Title,
+		Content:  param.Content,
+		Tags:     param.Tags,
 	}
 	if err := usecases.AddPost(input); err != nil {
 		return err

@@ -27,7 +27,7 @@ func Run() error {
 	server.GET("/accounts/:username", handlers.GetAccountInfo)
 	server.DELETE("/accounts/:username", handlers.DeleteAccount)
 
-	server.POST("/accounts/:username/posts", handlers.AddPost)
+	server.POST("/posts/:username", handlers.AddPost)
 
 	return server.Start(":" + configs.HTTP().Port)
 }
