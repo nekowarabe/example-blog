@@ -28,6 +28,7 @@ func Run() error {
 	server.DELETE("/accounts/:username", handlers.DeleteAccount)
 
 	server.POST("/posts/:username", handlers.AddPost)
+	server.POST("/posts/:username/:id", handlers.UpdatePost)
 
 	return server.Start(":" + configs.HTTP().Port)
 }

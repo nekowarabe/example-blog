@@ -29,6 +29,8 @@ type AccountRepository interface {
 
 // PostRepository 文章的 Collection-Like 介面定義
 type PostRepository interface {
+	// Get 取得指定 ID 的文章
+	Get(ID string) (entities.Post, error)
 	// Put 將文章放入集合中，如果已存在就取代
 	Put(post entities.Post) error
 }
