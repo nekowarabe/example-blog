@@ -4,6 +4,7 @@ package entities
 type Gender uint8
 
 const (
+	_ Gender = iota
 	// GenderUnknown 未提供性別
 	GenderUnknown Gender = iota
 	// GenderMale 男性
