@@ -25,6 +25,7 @@ func Run() error {
 	server.POST("/login", handlers.Login)
 	server.POST("/accounts", handlers.Register)
 	server.GET("/accounts/:username", handlers.GetAccountInfo)
+	server.PUT("/accounts/:username", handlers.UpdateAccount)
 	server.DELETE("/accounts/:username", handlers.DeleteAccount)
 
 	server.POST("/posts/:username", handlers.AddPost)
